@@ -3,14 +3,14 @@ const blogRouter = express.Router();
 
 const {
   fetchListOfBlogs,
-  deleteABlog,
-  updateABlog,
   addNewBlog,
+  updateABlog,
+  deleteABlog,
 } = require("../controller/blog-controller");
 
-blogRoter.get('/',fetchListOfBlogs);
-blogRouter.get('/add',addNewBlog);
-blogRouter.get('/update/:id',updateABlog);
-blogRouter.get('/delete/:id',deleteABlog);
+blogRouter.get("/", fetchListOfBlogs);
+blogRouter.post("/add", addNewBlog);
+blogRouter.put("/update/:id", updateABlog);
+blogRouter.delete("/delete/:id", deleteABlog);
 
-module.exports=blogRouter;
+module.exports = blogRouter;
